@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>Jiayi Zhao</title>
+
+	    <!--The following line loads in your CSS style sheet-->
+	    <link rel="stylesheet" href="style/index.css">
+
+	    <!--The following line loads in 2 fonts from Google Fonts: Bad Script and Lato-->
+	    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Lato:300,400,700" rel="stylesheet">
+
+	    <!--The following line loads in your JS script-->
+	    <!-- <script src="scripts/index.js"></script> -->
+	    <script src="scripts/index.js"></script>
+	    <script type="text/javascript">
+	    	window.addEventListener("resize", function(){
+	    		var ratio = (window.innerWidth * 0.46 * 0.74) / window.innerHeight;
+	    		console.log("resize");
+				for (var i = 0; i < document.getElementsByClassName("bars").length; i++)
+				{
+					var id = "bar" + (i+1);
+					var bar = document.getElementById(id);
+					var barY = bar.getBoundingClientRect().top;
+					var barLeft = (window.innerHeight - barY) * ratio + window.innerWidth * 0.46 * 0.26;
+					bar.style.marginLeft = barLeft + "px";
+				}
+	    	});
+	    </script>
+	</head>
+	<body>
+<!-- 		<div class="intro">
+			<div class="glitch glitchFadeout" data-text="Hello">Hello</div> 
+			<div class="glitch glitchFadeout" data-text="I'm Jiayi">I'm Jiayi</div>
+		</div> -->
+		<div id="background">
+		<script type="text/javascript">
+			var bg = document.getElementById("background");
+			// var bars = document.getElementByClassName("bars");
+			bg.addEventListener("animationstart", function(){
+				var ratio = (window.innerWidth * 0.46 * 0.74) / window.innerHeight;
+				for (var i = 0; i < document.getElementsByClassName("bars").length; i++)
+				{
+					var id = "bar" + (i+1);
+					var bar = document.getElementById(id);
+					var barOverlay = document.getElementById(id + "Overlay");
+					var barY = bar.getBoundingClientRect().top;
+					var barHeight = bar.clientHeight;
+					var barWidth = bar.clientWidth;
+					// console.log(barY);
+					console.log(barHeight, barWidth);
+					var barLeft = (window.innerHeight - barY) * ratio + window.innerWidth * 0.46 * 0.26;
+					var barLeftOverlay = (window.innerHeight - barY - (barHeight/2)) * ratio + window.innerWidth * 0.46 * 0.26 - (barWidth/2);
+					barOverlay.style.marginLeft = barLeftOverlay + "px";
+					bar.style.marginLeft = barLeft + "px";
+					console.log("marginLeft: ", bar.style.marginLeft);
+					console.log("client left: ", bar.getBoundingClientRect().left);
+				}
+			});
+		</script>
+<!-- 			<div id="defaultBg"></div>
+			<img src="resources/background/defaultBg.jpg" id="defaultBg" />
+			<div id="aboutBg"></div>
+			<div id="contactBg"></div> -->
+		</div>
+		<div id="chineseNameShadow">赵嘉仪</div>
+		<div id="chineseName">赵嘉仪</div>
+		<div id="shade"></div>
+		<script type="text/javascript">
+			var shade = document.getElementById("shade");
+			shade.addEventListener("animationend", function(){
+				var bars = document.getElementsByClassName("bars");
+				var barWidth = bars[0].clientWidth;
+				var barHeight = bars[0].clientHeight;
+				var ratio = (window.innerWidth * 0.46 * 0.74) / window.innerHeight;
+				var desiredDis = (barWidth/2) + (barHeight/2)*ratio;
+				var id = setInterval(move, 10);
+				var movedDis = 0;
+				var speed = 1;
+
+
+				function getSignalPos(bar){
+					var barY = bar.getBoundingClientRect().top;
+					var signalPos = (window.innerHeight - barY) * ratio + window.innerWidth * 0.46 * 0.26;
+					return signalPos;
+				}
+
+				function getTriPos(bar){
+					var barY = bar.getBoundingClientRect().top;
+					var barHeight = bar.clientHeight;
+					var triPos = (window.innerHeight - barY - barHeight) * ratio + window.innerWidth * 0.46 * 0.26;
+					return triPos;
+				}
+
+
+				function updateBarOverlay(){
+					// var barOne = document.getElementById("bar1");
+					var barsOverlays = document.getElementsByClassName("barsOverlays");
+					var barOneLeft = bars[0].getBoundingClientRect().left;
+					// var barOneY = bars[0].getBoundingClientRect().top;
+					// var barOneHeight = bars[0].clientHeight;
+					var signalPos = getSignalPos(bars[0]);
+					var triPos = getTriPos(bars[0]);
+					// var signalPos = (window.innerHeight - barOneY) * ratio + window.innerWidth * 0.46 * 0.26;
+					// var triPos = (window.innerHeight - barOneY - barOneHeight) * ratio + window.innerWidth * 0.46 * 0.26;
+					if (barOneLeft < signalPos){
+						if (barOneLeft >= triPos)
+						{
+							for (var i = 0; i < bars.length; i++)
+							{
+								var barHeight = bars[i].clientHeight;
+								var barLeft = bars[i].getBoundingClientRect().left;
+								var barOverlayLeft = barsOverlays[i].getBoundingClientRect().left;
+								var topLeft = (barLeft-barOverlayLeft) + ",0";
+								var barSigPos = getSignalPos(bars[i]);
+								var topRight = (barSigPos - barOverlayLeft) + ",0";
+								var bot = (barLeft-barOverlayLeft) + "," + ((barSigPos - barLeft) / ratio);
+								var clipPath = topLeft + " " + bot + " " + topRight;
+								// bars[i].style.cliPath = clipPath;
+								var svgPath = document.getElementById("barPolygon");
+								svgPath.setAttribute("points", clipPath);
+							}
+						} else
+						{
+							for (var i = 0; i < bars.length; i++)
+							{
+								var barHeight = bars[i].clientHeight;
+								var barLeft = bars[i].getBoundingClientRect().left;
+								var barOverlayLeft = barsOverlays[i].getBoundingClientRect().left;
+								var topLeft = (barLeft-barOverlayLeft) + ",0";
+								var botLeft =  (barLeft-barOverlayLeft) + "," + barHeight;
+								var topRight = (getSignalPos(bars[i]) - barOverlayLeft) + ",0";
+								var botRight = (getTriPos(bars[i]) - barOverlayLeft) + "," + barHeight;
+								// var clipPath = "polygon(" + topLeft + ", " + botLeft + ", " + botRight + ", " + topRight + ")";
+								var clipPath = topLeft + " " + botLeft + " " + botRight + " " + topRight;
+								var svgPath = document.getElementById("barPolygon");
+								svgPath.setAttribute("points", clipPath);
+								// console.log(cliPath in bars[i].style);
+							}
+						}
+					}
+				}
+				function move(){
+					if ((desiredDis-movedDis) < speed)
+					{
+						movedDis = desiredDis;
+						for (var i = 0; i < bars.length; i++)
+						{
+							bars[i].style.marginLeft = (bars[i].getBoundingClientRect().left - (desiredDis-movedDis)) + "px";
+						}
+						updateBarOverlay();
+						clearInterval(id);
+					} else {
+						movedDis = movedDis + speed;
+						for (var i = 0; i < bars.length; i++)
+						{
+							bars[i].style.marginLeft = (bars[i].getBoundingClientRect().left - speed) + "px";
+						}
+						updateBarOverlay();
+					}
+				}
+			});
+		</script>
+		<!-- <div class="chineseName" data-text="赵嘉仪">赵嘉仪</div> -->
+		<div class="buttonBars">
+			<div class="bars" id="bar1"></div>
+			<div class="bars" id="bar2"></div>
+			<div class="bars" id="bar3"></div>
+<!-- 			<script type="text/javascript">
+				var ratio = (window.innerWidth * 0.46 * 0.74) / window.innerHeight;
+				var barOne = document.getElementById("bar1");
+				var barOneY = barOne.getBoundingClientRect().top;
+				// var barOneHeight = getPosition(barOne).y;
+				var barOneLeft = (window.innerHeight - barOneY) * ratio;
+				console.log(barOneLeft);
+				barOne.style.left = barOneLeft;
+			</script> -->
+		</div>
+		<div class="buttonBarsOverlays">
+			<a href="about.html" onmouseover="changeBackground(0)" onmouseleave="changedBackground()"><div class="barsOverlays" id="bar1Overlay">
+				<div class="barLetters">
+					<span>A</span>
+					<span>B</span>
+					<span>O</span>
+					<span>U</span>
+					<span>T</span>
+				</div>
+			</div></a>
+			<a href="work.html" onmouseover="changeBackground(1)" onmouseleave="changedBackground()"><div class="barsOverlays" id="bar2Overlay">
+				<div class="barLetters">
+					<span>W</span>
+					<span>O</span>
+					<span>R</span>
+					<span>K</span>
+				</div>
+			</div></a>
+			<a href="contact.html" onmouseover="changeBackground(2)" onmouseleave="changedBackground()"><div class="barsOverlays" id="bar3Overlay">
+				<div class="barLetters">
+					<span>C</span>
+					<span>O</span>
+					<span>N</span>
+					<span>T</span>
+					<span>A</span>
+					<span>C</span>
+					<span>T</span>
+				</div>
+			</div></a>
+		</div>
+
+<!-- 		<div class="nameTitle">
+			<span id="headLetter">J</span>
+			<span>I</span>
+			<span>A</span>
+			<span>Y</span>
+			<span>I</span>
+		</div> -->
+
+		<svg width="0%" height="0%">
+			<defs>
+				<clipPath id="barClip">
+					<polygon id="barPolygon" points="0,0 0,0 0,0 0,0"/>
+				</clipPath>
+			</defs>
+		</svg>
+
+	</body>
+</html>

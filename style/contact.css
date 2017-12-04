@@ -1,0 +1,196 @@
+body {
+	top: 0;
+	left: 0;
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+}
+
+canvas{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo {
+  position: fixed;
+  font-size: 10vh;
+  margin-top: 2vh;
+  margin-left: 2vw;
+  color: #b7b7b7;
+}
+
+
+
+
+.contactFormLeft {
+	background-color: white;
+	width: 25vw;
+	height: 75vh;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	margin-left: 20vw;
+	padding-left: 2.5vw;
+	padding-right: 2.5vw;
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+}
+
+.contactFormRight {
+	background-color: white;
+	width:25vw;
+	height: 75vh;
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	margin-left: 50vw;
+	padding-left: 2.5vw;
+	padding-right: 2.5vw;
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+}
+
+.contactOptionsText {
+  font-size: 4vh;
+  color: #5A5A5A;
+  font-style: italic;
+}
+
+*:focus {
+  outline: none;
+}
+
+#conatctFormHead {
+	font-size: 4vh;
+	color: #5A5A5A;
+	font-style: italic;
+}
+
+#contactFormContent {
+	position: absolute;
+	bottom: 2.5vh;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 5vh;
+}
+
+.inputGroup label {
+  position: absolute;
+  top: 0;
+  left: 1vw;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 3vh;
+  color: #95989A;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  display: block;
+  width: 24vw;
+  border: none;
+  border-bottom: 1px solid #95989A;
+  padding: 1vh;
+  padding-left: 1vw;
+  padding-right: 0;
+  background: none;
+  color: #95989A;
+  font-weight: lighter;
+  font-size: 2.5vh;
+}
+
+.inputGroup input:focus ~ label,
+.inputGroup input:valid ~ label,
+.inputGroup textarea:focus ~ label,
+.inputGroup textarea:valid ~ label {
+  top: -4vh;
+  color: #000;
+  transition: all 0.3s ease;
+  font-size: 2.5vh;
+}
+
+.inputGroup input:focus ~ .inputBar:before,
+.inputGroup input:focus ~ .inputBar:after,
+.inputGroup textarea:focus ~ .inputBar:before,
+.inputGroup textarea:focus ~ .inputBar:after {
+  width: 50%;
+}
+
+.inputGroup textarea {
+  height: 100px;
+  width: 24vw;
+  overflow: auto;
+  resize: none;
+}
+
+.inputGroup .inputBar {
+  position: relative;
+  display: block;
+  width: 25vw;
+}
+
+.inputGroup .inputBar:before,
+.inputGroup .inputBar:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  background: #f3f3f3;
+  height: 2px;
+  transition: all 0.2s ease;
+}
+
+.inputGroup .inputBar:after {
+  right: 50%;
+}
+
+.inputGroup .inputBar:before {
+  left: 50%;
+}
+
+button {
+  background-color: white;
+  border-width: 1px;
+  padding: 15px 0;
+  margin: 0;
+  width: 25vw;
+  color: #95989A;
+  text-transform: uppercase;
+  font-size: 3vh;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.contactOptions {
+  margin-bottom: 2vh;
+}
+
+.contactOptionLi {
+  margin-top: 1.5vh;
+}
+
+.contactOptionLi img {
+  height: 5vh;
+  width: 5vh;
+}
+
+.contactOptinoLiText {
+  display: inline-block;
+  font-weight: lighter;
+  color: #95989A;
+  top: -1.5vh;
+  left: 1vh;
+  position: relative;
+}
+

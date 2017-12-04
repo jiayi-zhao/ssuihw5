@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>Jiayi Zhao</title>
+
+	    <!--The following line loads in your CSS style sheet-->
+	    <link rel="stylesheet" href="style/about.css">
+
+	    <!--The following line loads in 2 fonts from Google Fonts: Bad Script and Lato-->
+	    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Lato:300,400,700" rel="stylesheet">
+
+	    <!--The following line loads in your JS script-->
+	    <!-- <script src="scripts/index.js"></script> -->
+	    <script src='https://cdn.bootcss.com/p5.js/0.5.16/p5.min.js'></script>
+	    <script src="scripts/about.js"></script>
+	</head>
+	<body onload="addChangeFunction()" onmousewheel="scrollUpdate()">
+		<a href="index-web.html"><div id="logo">J</div></a>
+		<div class="aboutPages" id="about1">
+			<div id="page1Center">
+				<div id="centerNonAni">I am a</div>
+				<div id="centerAnimation">
+					<div id="centerText">software engineer</div>
+<!-- 					<div class="centerText">UI/UX designer</div>
+					<div class="centerText">coffee addict</div>
+					<div class="centerText">beijing native</div> -->
+				</div>
+			</div>
+			<div id="arrow" onclick="window.location.href='#about2';animateText()">
+				<svg id="arrowSVG" width="100" height="100">
+					<line id="arrowSVGLeft" x1="0" y1="0" x2="0" y2="0" style="stroke:rgb(149,152,154);stroke-width:2" />
+					<line id="arrowSVGRight" x1="0" y1="0" x2="0" y2="0" style="stroke:rgb(149,152,154);stroke-width:2" />
+				</svg>
+				<!-- <span class="arrowparts" id="arrowleft"></span> -->
+				<!-- <span class="arrowparts" id="arrowright"></span> -->
+			</div>
+		</div>
+		<div class="aboutPages" id="about2">
+			<div id="about2Text"></div>
+		</div>
+		<div class="aboutPages" id="about3">
+			<!-- <div id="timeline">
+				<div class="timelineItem">
+					<div class="timelineItemLeft"></div>
+					<div class="timelineItemRight"></div>
+				</div>
+				<div class="timelineItem">
+					<div class="timelineItemLeft"></div>
+					<div class="timelineItemRight"></div>
+				</div>
+				<div class="timelineItem">
+					<div class="timelineItemLeft"></div>
+					<div class="timelineItemRight"></div>
+				</div>
+			</div> -->
+			<table id="timeline">
+				<tr class="TLRow">
+					<td valign="top"><div class="timelineLeft timelineContent timelineRow">
+						<p>Data Visualization Programmer</p>
+						<p>Established visual elements and modules for updating dataframes according to user's request on visualization dashboard</p>
+					</div></td>
+					<td valign="top"><div class="timelineRight timelineMain">
+						<div class="workComp">CMU HCII Ubicomp Lab</div>
+						<div class="workPos">Research Assistant</div>
+						<div class="workTime">Oct 2017 - </div>
+					</div></td>
+				</tr>
+				<tr class="TLRow">
+					<td valign="top"><div class="timelineLeft timelineMain">
+						<div class="workComp">Xiaomi</div>
+						<div class="workPos">Software Engineer Intern</div>
+						<div class="workTime">May 2017 - Aug 2017</div>
+					</div></td>
+					<td valign="top"><div class="timelineRight timelineContent timelineRow">
+						<p>Created an auto url information analysis system by categorizing urls with the use of data mining algorithms and machine learning</p>
+						<p>Designed data modules for a specific request from Beijing Electric Vehicle Co., Ltd. and modules for vehicles’ related data mining</p>
+					</div></td>
+				</tr>
+				<tr class="TLRow">
+					<td valign="top"><div class="timelineLeft timelineContent timelineRow">
+						<p>Collaborated on coding an application for kids participants’ survey</p>
+						<p>Fixed collected data in Elan files and excel files and annotated collected data</p>
+					</div></td>
+					<td valign="top"><div class="timelineRight timelineMain">
+						<div class="workComp">CMU HCII Articulab</div>
+						<div class="workPos">Research Assistant</div>
+						<div class="workTime">Oct 2016 - May 2017</div>
+					</div></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

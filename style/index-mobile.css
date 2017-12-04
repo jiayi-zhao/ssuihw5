@@ -1,0 +1,21 @@
+.myTop {
+	background-color: white;
+}
+
+.centerText {
+	left: 50%;
+	transform: translateX(-50%);
+	position: fixed;
+}
+
+.spanLogos img{
+	width: 10vw;
+	height: 10vw;
+	margin-left: 5vw;
+	margin-right: 5vw;
+}
+
+#contactLogos {
+	margin-top: 3vh;
+	margin-bottom: 5vh;
+}

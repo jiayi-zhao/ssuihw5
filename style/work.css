@@ -1,0 +1,91 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo {
+  position: fixed;
+  font-size: 10vh;
+  margin-top: 2vh;
+  margin-left: 2vw;
+  color: #b7b7b7;
+}
+
+@keyframes fade-in{
+	100%{
+		opacity: 1;
+	}
+}
+
+#optionsContainer {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 80vw;
+	font-family: Impact, Charcoal, sans-serif;
+	opacity: 0;
+	animation: fade-in 2s linear forwards;
+}
+
+.options {
+	width: 25vw;
+	height: 35vh;
+	/*margin-left: 2vw;*/
+	/*margin-right: 2vw;*/
+}
+
+.options:hover {
+	font-style: italic;
+}
+
+.optionImage {
+	height: 25vh;
+	border-width: 1px;
+	margin-top: 7vh;
+	background-color: #95989A;
+}
+
+#option1 {
+	float: left;
+}
+
+#option2 {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#option3 {
+	float: right;
+}
+
+.optionTextOverlay{
+	font-size: 10vh;
+	position: absolute;
+	color: #fff;
+}
+
+.optionText {
+	font-size: 10vh;
+	position: absolute;
+	clip: rect(0, 25vw, 7vh, 0);
+}
+
+#gridViewButton {
+	width: 100vw;
+	opacity: 0;
+	animation: fade-in 2s linear forwards;
+}
+
+#gridViewButton img{
+	width: 7vh;
+	height: 7vh;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, -90%);
+}

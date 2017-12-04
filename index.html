@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <title>Jiayi Zhao</title>
+	    <link rel="stylesheet" href="style/intro.css">
+
+	    <!--The following line loads in 2 fonts from Google Fonts: Bad Script and Lato-->
+	    <link href="https://fonts.googleapis.com/css?family=Bad+Script|Lato:300,400,700" rel="stylesheet">
+	</head>
+	<body>
+		<div class="intro">
+			<div class="glitch glitchFadeout" data-text="Hello">Hello</div> 
+			<div class="glitch glitchFadeout" data-text="I'm Jiayi">I'm Jiayi</div>
+		</div>
+		<script type="text/javascript">
+			var x = document.getElementsByClassName("glitchFadeout")[0];
+			x.addEventListener("animationend", function(){
+				if (window.innerWidth < window.innerHeight)
+				{
+					window.location.href = "index-mobile.html";
+				}
+				else
+				{
+					window.location.href = "index-web.html";
+				}
+			});
+		</script>
+	</body>
+</html>

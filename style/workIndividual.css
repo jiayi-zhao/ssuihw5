@@ -1,0 +1,107 @@
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: #F8F8F8;
+}
+
+a {
+  text-decoration: none;
+}
+
+#leftCol {
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	width: 30vw;
+	height: 100vh;
+	background-color: white;
+}
+
+#logo {
+  position: fixed;
+  font-size: 10vh;
+  margin-top: 2vh;
+  margin-left: 2vw;
+  color: #b7b7b7;
+}
+
+#contentContainer {
+	margin-left: 30vw;
+	width: 70vw;
+	background-color: #F8F8F8;
+}
+
+#gridView img{
+	width: 5vh;
+	height: 5vh;
+	position: absolute;
+	bottom: 20%;
+	transform: translateY(-80%);
+	margin-left: 20%;
+}
+
+#backButton {
+	font-size: 3vh;
+	color: #95989A;
+	font-weight: lighter;
+	position: absolute;
+	bottom: 10%;
+	transform: translateY(-90%);
+	margin-left: 20%;
+}
+
+#backButton:hover {
+	cursor: pointer;
+}
+
+#arrowSVG {
+	margin-right: 1vw;
+}
+
+#projectItems {
+	width: 80%;
+	margin-left: 20%;
+	height: 50%;
+	position: absolute;
+	bottom: 30%;
+	font-size: 4vh;
+	font-weight: lighter;
+	color: #95989A;
+}
+
+.projectLi {
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+}
+
+.projectLi:hover {
+	cursor: pointer;
+}
+
+.contentImg img{
+	width: 50vw;
+	height: auto;
+}
+
+.contentWrapper {
+	width: 60vw;
+	padding-top: 5vh;
+	margin-left: 5vw;
+	margin-bottom: 10vh;
+}
+
+.contentTitle {
+	font-size: 8vh;
+	/*margin-top: 5vh;*/
+	margin-bottom: 5vh;
+}
+
+.contentDetail {
+	margin-top: 5vh;
+	font-size: 3vh;
+}
+
+.readMore {
+	font-size: 3vh;
+	margin-top: 3vh;
+}
