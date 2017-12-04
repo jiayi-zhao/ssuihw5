@@ -23,11 +23,70 @@ a {
 .gridSingle {
 	position: relative;
 	width: 25vw;
+  height: 30vh;
 	display: inline-block;
 	margin-top: 2vh;
 	margin-bottom: 2vh;
 	margin-left: 2vw;
 	margin-right: 2vw;
+}
+
+.imageContainer{
+  height: 100%; 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: -200;
+}
+#iBeha {
+  background-image: url("background/grid/beha.png");
+}
+#iUrlC {
+  background-image: url("background/grid/urlc.png");
+}
+#iAudi {
+  background-image: url("background/grid/audi.png");
+}
+#iCour {
+  background-image: url("background/grid/cour.png");
+}
+#iPort {
+  background-image: url("background/grid/port.png");
+}
+#iDogH {
+  background-image: url("background/grid/dogh.png");
+}
+#iGrou {
+  background-image: url("background/grid/grou.png");
+}
+#iGuit {
+  background-image: url("background/grid/guit.png");
+}
+#iType {
+  background-image: url("background/grid/type.png");
+}
+#iSqua {
+  background-image: url("background/grid/squa.png");
+}
+#iRene {
+  background-image: url("background/personalProject.png");
+}
+#iPhot {
+  background-image: url("background/grid/phot.JPG");
+}
+#iColl {
+  background-image: url("background/grid/coll.jpg");
+}
+#iGrad {
+  background-image: url("background/personalProject.png");
+}
+#iMusi {
+  background-image: url("background/personalProject.png");
 }
 
 .gridSingle img{

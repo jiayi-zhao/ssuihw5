@@ -68,7 +68,21 @@
 		<div id="shade"></div>
 		<script type="text/javascript">
 			var shade = document.getElementById("shade");
+			function animateLogo(){
+				var ele = document.getElementById("nameLogo");
+				var id = setInterval(animate, 200);
+				var str = ["J", "I", "A", "Y", "I", " ", "Z", "H", "A", "O"];
+				function animate(){
+					if (str.length == 0){
+						clearInterval(id);
+					}else{
+						ele.innerHTML += str.shift();
+					}
+				}
+			}
 			shade.addEventListener("animationend", function(){
+				animateLogo();
+
 				var bars = document.getElementsByClassName("bars");
 				var barWidth = bars[0].clientWidth;
 				var barHeight = bars[0].clientHeight;
@@ -206,6 +220,7 @@
 				</div>
 			</div></a>
 		</div>
+		<div id="nameLogo"></div>
 
 <!-- 		<div class="nameTitle">
 			<span id="headLetter">J</span>

@@ -43,10 +43,11 @@ a {
 }
 
 .optionImage {
+	position: relative;
 	height: 25vh;
 	border-width: 1px;
 	margin-top: 7vh;
-	background-color: #95989A;
+	/*background-color: #95989A;*/
 }
 
 #option1 {
@@ -88,4 +89,41 @@ a {
 	bottom: 10%;
 	left: 50%;
 	transform: translate(-50%, -90%);
+}
+
+.optionImageAll {
+	height: 100%; 
+  	width: 100%;
+  	position: fixed;
+	top: 0;
+	left: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	z-index: -200;
+}
+
+.optionImageOverlay{
+	background-color: #000;
+	opacity: 0.5;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#optionImage1 {
+	background-image: url("background/work.png");
+}
+
+#optionImage2 {
+	background-image: url("background/uiux.png");
+}
+
+#optionImage3 {
+	background-image: url("background/personalProject.png");
 }

@@ -1,4 +1,4 @@
-var backgroundLinks = ['style/background/bg0.jpg', 'style/background/bg1.jpg', 'style/background/bg2.jpg'];
+var backgroundLinks = ['style/background/about.JPG', 'style/background/work.png', 'style/background/contact.png'];
 
 function changeBackground(index){
 	var ele = document.getElementById("background");
