@@ -19,6 +19,7 @@ function changeText(){
 	var ele = document.getElementById("centerText");
 	ele.innerHTML = textAni[textCount%textLen];
 	ele.style.color = textAniColor[textCount%textLen];
+	ele.style.opacity = "0";
 }
 
 function setArrow(){
